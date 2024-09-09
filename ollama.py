@@ -2,16 +2,13 @@ import ollama
 import json
 
 def get_data_from_ollama(prompt):
-    url = "http://localhost:5000/ollama"
-    headers = {"Content-Type": "application/json"}
-    payload = {"prompt": prompt}
-    
-    response = requests.post(url, headers=headers, data=json.dumps(payload))
-    
-    if response.status_code==200:
-        return response.json()
-    else:
-        response.raise_for_status()
+    response = ollama.chat(model='llama2', messages = [
+      {
+        'role': 'user',
+        'content': prompt
+      }
+    ])
+    return response
         
 def save_data_to_file(data, filename="output.json"):
     with open(filename, "w") as file:
