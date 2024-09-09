@@ -12,3 +12,10 @@ def example():
     return "예제"
   
 another_example = lambda: "예제"
+
+# 3
+array = ["짬뽕", "선지국", "흠"]
+obj = {
+    "점심 메뉴": "뭐먹지",
+    "밥이냐": "면이냐",
+}
