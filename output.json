@@ -1,0 +1,16 @@
+{
+    "model": "llama3.1",
+    "created_at": "2024-09-09T07:45:48.821321Z",
+    "message": {
+        "role": "assistant",
+        "content": "I don't have a personal name. I'm an AI designed to assist and communicate with users in a helpful way. You can think of me as a computer program that's here to help answer questions, provide information, and chat with you. If you'd like, we can still have a friendly conversation and talk about any topic that interests you!"
+    },
+    "done_reason": "stop",
+    "done": true,
+    "total_duration": 12867269583,
+    "load_duration": 49343375,
+    "prompt_eval_count": 18,
+    "prompt_eval_duration": 7129870000,
+    "eval_count": 71,
+    "eval_duration": 5662232000
+}
