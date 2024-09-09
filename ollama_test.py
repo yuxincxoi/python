@@ -1,8 +1,8 @@
-import ollama
+from ollama import chat
 import json
 
 def get_data_from_ollama(prompt):
-    response = ollama.chat(model='llama2', messages = [
+    response = chat(model='llama3.1', messages = [
       {
         'role': 'user',
         'content': prompt
