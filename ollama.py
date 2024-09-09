@@ -1,4 +1,4 @@
-import requests
+import ollama
 import json
 
 def get_data_from_ollama(prompt):
