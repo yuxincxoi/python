@@ -5,6 +5,8 @@
 # input으로 '노드'라는 단어가 포험되면 cli REPL 환경인 node가 실행되도록 명령
 # '타입'이라는 단어가 포함되면 타입 검사
 
+import subprocess
+
 def type_test():
     try:
         text = int(input("input : "))
@@ -12,4 +14,5 @@ def type_test():
     except ValueError:
         print("문자열입니다.")
         
-type_test()
+def run_node():
+    subprocess.run(["node"], shell=True)
