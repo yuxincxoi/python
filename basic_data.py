@@ -257,6 +257,7 @@ def extract_keys(data):
   
     return keys
   
+# 모든 value 추출하는 함수
 def extract_values(data):
   keys_values = []
   
@@ -270,3 +271,24 @@ def extract_values(data):
           keys_values.extend(extract_values(item))
   
   return keys_values
+
+def main():
+    total = 0
+    count = 0
+    
+    all_keys = extract_keys(basic_data)
+    all_values = extract_values(basic_data)
+    
+    for i in all_keys:
+        if "교통" in i:
+          count += 1
+          
+    for value in all_values:
+        if isinstance(value, (int, float)):
+            if "교통" in str(value):
+                total += value
+          
+    print(count, total)
+
+if __name__ == "__main__":
+    main()
