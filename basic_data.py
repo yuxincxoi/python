@@ -257,3 +257,16 @@ def extract_keys(data):
   
     return keys
   
+def extract_values(data):
+  keys_values = []
+  
+  if data is dict:
+      for key, value in data.items():
+          keys_values.append((key, value))
+          keys_values.extend(extract_values(value))
+  
+  elif data is list:
+      for item in data:
+          keys_values.extend(extract_values(item))
+  
+  return keys_values
