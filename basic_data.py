@@ -242,3 +242,6 @@ basic_data = [
   "대구 수성 더 아르코 호텔 라이온즈파크점" : 80000,
 } 
 ]
+
+key = list(basic_data[0].keys())
+print(key)
