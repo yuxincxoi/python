@@ -16,3 +16,13 @@ def type_test():
         
 def run_node():
     subprocess.run(["node"], shell=True)
+        
+def main():
+    command = input("명령을 입력하세요 : ")
+    if "노드" in command:
+        run_node()
+    elif "타입" in command:
+        type_test()
+
+if __name__ == "__main__":
+    main()
