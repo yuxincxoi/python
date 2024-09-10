@@ -243,10 +243,17 @@ basic_data = [
 } 
 ]
 
-# for문 사용하기
-for key in basic_data[0]:
-    print(key)
-
-# keys() 사용하기
-# key = list(basic_data[0].keys())
-# print(key)
+# 모든 key 추출하는 함수
+def extract_keys(data):
+    keys = []
+    
+    if data is dict:
+        for key, value in data.items():
+            keys.append(key)
+            keys.extend(extract_keys(value))
+    elif data is list:
+        for item in data:
+            keys.extend(extract_keys(item))
+  
+    return keys
+  
