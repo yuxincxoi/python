@@ -277,7 +277,6 @@ def main():
     count = 0
     
     all_keys = extract_keys(basic_data)
-    all_values = extract_values(basic_data)
     
     for i in all_keys:
         if "교통" in i:
