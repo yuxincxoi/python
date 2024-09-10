@@ -243,5 +243,10 @@ basic_data = [
 } 
 ]
 
-key = list(basic_data[0].keys())
-print(key)
+# for문 사용하기
+for key in basic_data[0]:
+    print(key)
+
+# keys() 사용하기
+# key = list(basic_data[0].keys())
+# print(key)
