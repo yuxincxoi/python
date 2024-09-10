@@ -247,30 +247,30 @@ basic_data = [
 def extract_keys(data):
     keys = []
     
-    if data is dict:
+    if isinstance(data, dict):
         for key, value in data.items():
             keys.append(key)
             keys.extend(extract_keys(value))
-    elif data is list:
+    elif isinstance(data, list):
         for item in data:
             keys.extend(extract_keys(item))
-  
+
     return keys
-  
+
 # 모든 value 추출하는 함수
 def extract_values(data):
-  keys_values = []
-  
-  if data is dict:
-      for key, value in data.items():
-          keys_values.append((key, value))
-          keys_values.extend(extract_values(value))
-  
-  elif data is list:
-      for item in data:
-          keys_values.extend(extract_values(item))
-  
-  return keys_values
+    keys_values = []
+
+    if isinstance(data, dict):
+        for key, value in data.items():
+            keys_values.append((key, value))
+            keys_values.extend(extract_values(value))
+
+    elif isinstance(data, list):
+        for item in data:
+            keys_values.extend(extract_values(item))
+
+    return keys_values
 
 def main():
     total = 0
@@ -281,13 +281,13 @@ def main():
     
     for i in all_keys:
         if "교통" in i:
-          count += 1
-          
-    for value in all_values:
-        if isinstance(value, (int, float)):
-            if "교통" in str(value):
-                total += value
-          
+            count += 1
+            for j in basic_data:
+                if isinstance(j, dict) and i in j:
+                    value = j[i]
+                    if isinstance(value, (int, float)):
+                        total += value
+
     print(count, total)
 
 if __name__ == "__main__":
